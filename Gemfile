@@ -26,11 +26,13 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
+  gem 'faker'
 end
 
 group :development do
   gem 'annotate'
   gem 'web-console'
+  gem 'hotwire-livereload'
 end
 
 group :test do
