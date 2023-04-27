@@ -58,19 +58,19 @@ class ItemsController < ApplicationController
   end
 
   def active
-    @items = Item.where(active: true)
+    @items = Item.active
   end
 
   def inactive
-    @items = Item.where(active: false)
+    @items = Item.inactive
   end
 
   def borrowed
-    @items = Item.where(borrowed: true)
+    @items = Item.borrowed
   end
 
   def on_place
-    @items = Item.where(borrowed: false)
+    @items = Item.on_place
   end
 
 

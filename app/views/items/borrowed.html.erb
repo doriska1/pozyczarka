@@ -1,28 +1,3 @@
 <h1>Items borrowed</h1>
 
-<div id="items" class="container-fluid">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th class="text-center">Active</th>
-        <th class="text-center">Borrowed</th>
-        <th class="text-center">Type</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.name %></td>
-        <td class="text-center"><%= item.active ? '✅': '❌' %></td>
-        <td class="text-center"><%= item.borrowed ? '✅': '❌' %></td>
-        <td class="text-center"><%= item.item_type%></td>
-        <td>
-          <%= link_to "Show this item", item, class: "btn btn-primary" %>
-        </td>
-      </tr>
-    <% end %>  
-    </tbody>
-  </table>
-</div>
+<%= render "items/items_list" %>
