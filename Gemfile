@@ -36,4 +36,8 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.2'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers', '~> 5.3'
+  gem 'database_cleaner-active_record'
 end
