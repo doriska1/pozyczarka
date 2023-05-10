@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: items
@@ -11,14 +13,13 @@
 #  updated_at :datetime         not null
 #
 class Item < ApplicationRecord
-  validates :name, presence: true, length: {minimum:3}
+  validates :name, presence: true, length: { minimum: 3 }
 
-  enum item_type: %i[book cd electric_device other]
-  validates :item_type, inclusion: {in: item_types.keys}
+  enum item_type: { book: 0, cd: 1, electric_device: 2, other: 3 }
+  validates :item_type, inclusion: { in: item_types.keys }
 
-  scope :active, -> { where(active: true)}
-  scope :inactive, -> { where(active: false)}
-  scope :borrowed, -> { where(borrowed: true)}
-  scope :on_place, -> { where(borrowed: false)}
-
+  scope :active, -> { where(active: true) }
+  scope :inactive, -> { where(active: false) }
+  scope :borrowed, -> { where(borrowed: true) }
+  scope :on_place, -> { where(borrowed: false) }
 end
