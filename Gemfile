@@ -40,4 +40,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 6.0', '>= 6.0.2'
   gem 'shoulda-matchers', '~> 5.3'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'simplecov'
 end
