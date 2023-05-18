@@ -19,8 +19,9 @@ end
 
 context 'when name not passed' do
   before do
-    itemm = Item.create(name: 'ball')
+    Item.create(name: 'ball')
   end
+
   it 'does create item' do
     expect(Item.count).to eq 1
   end
