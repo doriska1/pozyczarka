@@ -74,7 +74,7 @@ describe ItemsController do
     end
 
     it 'creates a new item' do
-      expect {create_request}.to change(Item, :count).by(1) # zachowanie, uruchomienie tej metody {}
+      expect { create_request }.to change(Item, :count).by(1) # zachowanie, uruchomienie tej metody {}
     end
   end
 
@@ -84,7 +84,7 @@ describe ItemsController do
 
     subject( :update_request) { put :update, params: { id: item.id, item: new_attributes } }
     it 'return http redirect' do
-      put :update, params: { id: item.id, item: new_attributes }
+      update_request
       expect(response).to have_http_status(302)
     end
     it 'redirects to updated item' do
@@ -93,7 +93,7 @@ describe ItemsController do
     end
 
     it 'updates the item' do
-      expect{update_request}.to change {item.reload.name}.to(new_attributes[:name]) #efekt w systemie a nie jego wartość {}
+      expect { update_request }.to change { item.reload.name }.to(new_attributes[:name]) #efekt w systemie a nie jego wartość {}
     end
   end
 

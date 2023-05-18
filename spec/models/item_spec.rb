@@ -10,10 +10,7 @@ describe Item, type: :model do
 
   describe 'validations' do
     # before {Item.new("book")}
-    it do
-      expect(subject).to validate_presence_of :name
-    end
-
+    it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_length_of(:name).is_at_least(3) }
     it { is_expected.to define_enum_for(:item_type).with_values(described_class.item_types) }
   end

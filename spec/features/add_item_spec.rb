@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'Add new item' do
   before do
     visit '/'
@@ -18,7 +20,7 @@ describe 'Add new item' do
     expect(item_type).to eq 'book'
     expect(page).to have_selector(:link_or_button, 'Back')
 
-    click_link "Back"
+    click_link 'Back'
     expect(page).to have_content('Harry Potter i Komnata Tajemnic')
     expect(page).to have_content('book')
   end
