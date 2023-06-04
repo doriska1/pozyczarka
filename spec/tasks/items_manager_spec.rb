@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../lib/items_manager'
 
 describe ItemsManager do
@@ -7,7 +9,7 @@ describe ItemsManager do
   let!(:user) { create(:user) }
 
   it 'fixes items and users association' do
-    manager.fix_items_amd_users_associations(user: user)
+    manager.fix_items_amd_users_associations(user:)
     items.each do |item|
       expect(item.reload.user).to eq user
     end

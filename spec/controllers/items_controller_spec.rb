@@ -23,7 +23,8 @@ describe ItemsController do
 
   describe 'GET #show' do
     subject(:show_request) { get :show, params: { id: item.id } }
-    let(:item) { create(:item, user: user) } 
+
+    let(:item) { create(:item, user:) }
 
     it 'return Http success' do
       show_request
@@ -51,10 +52,9 @@ describe ItemsController do
   end
 
   describe 'GET #edit' do
-    let(:item) { create(:item, user: user) }
-
     subject(:edit_request) { get :edit, params: { id: item.id } }
 
+    let(:item) { create(:item, user:) }
 
     it 'return http success' do
       edit_request
@@ -90,7 +90,7 @@ describe ItemsController do
   describe 'PUT #update' do
     subject(:update_request) { put :update, params: { id: item.id, item: new_attributes } }
 
-    let(:item) { create(:item, user: user) }
+    let(:item) { create(:item, user:) }
     let(:new_attributes) { attributes_for(:item) }
 
     it 'return http redirect' do
@@ -111,7 +111,7 @@ describe ItemsController do
   describe 'DELETE #destroy' do
     subject(:destroy_request) { delete :destroy, params: { id: item.id } }
 
-    let!(:item) { create(:item, user: user) }
+    let!(:item) { create(:item, user:) }
 
     it 'return http redirect' do
       destroy_request

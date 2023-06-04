@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe 'Add new item' do  
+describe 'Add new item' do
   let(:user) { create(:user) }
 
   before do
